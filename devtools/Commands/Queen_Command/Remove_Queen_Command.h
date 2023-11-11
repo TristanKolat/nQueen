@@ -4,6 +4,7 @@
  * 
  * @date   Nov 11th, 2023
  * @class A command to remove a queen from the chessboard for the N-Queens problem.
+ * @return a boolean showing if command was successful or not
  */
 
 #ifndef _REMOVE_QUEEN_COMMAND_H_
@@ -19,7 +20,7 @@ public:
     Remove_Queen_Command(Array_Iterator<int> &iter);
     virtual ~Remove_Queen_Command() { }
     // Execute removal of the queen from the board array
-    virtual void execute(void) override;
+    virtual bool execute(void) override;
 
 private:
     // Referenced iterator in the chess board array to remove a queen from

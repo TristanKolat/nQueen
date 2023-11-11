@@ -19,8 +19,9 @@ class Expr_Command {
      *
      * @param s The stack to perform the operation on.
      * @throws std::exception If the operation cannot be performed.
+     * @return returns a boolean whether or not the command execution was succesful or not
     */
-    virtual void execute (void) = 0;
+    virtual bool execute (void) = 0;
 };
 
 #endif   // !_EXPR_COMMAND_H_

@@ -3,7 +3,9 @@
  * @author Tristan Kolat
  * 
  * @date   Nov 11th, 2023
+ * 
  * @class A command to place a queen on the chessboard for the N-Queens problem.
+ * @return a boolean showing if command was successful or not
 */
 
 #ifndef _PLACE_QUEEN_COMMAND_H_
@@ -20,7 +22,7 @@ public:
     Place_Queen_Command(Array_Iterator<int> &iter, int row);
     virtual ~Place_Queen_Command() { }
     //execute placing the queen onto the board array
-    virtual void execute(void);
+    virtual bool execute(void);
 
 private:
     //referenced column from the iterator in the chess board array for assigning a row number 
