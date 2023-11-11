@@ -19,7 +19,7 @@ public:
     Remove_Queen_Command(Array_Iterator<int> &iter);
     virtual ~Remove_Queen_Command() { }
     // Execute removal of the queen from the board array
-    virtual bool execute(void) override;
+    virtual bool execute(void);
 
 private:
     // Referenced iterator in the chess board array to remove a queen from
