@@ -12,7 +12,6 @@
 #define _PLACE_QUEEN_COMMAND_H_
 
 #include "../Interface/Expr_Command.h"
-#include "../../Array/Array.h"
 #include "../../Iterator/iterArray/Array_Iterator.h"
 
 

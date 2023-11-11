@@ -11,7 +11,6 @@
 #define _REMOVE_QUEEN_COMMAND_H_
 
 #include "../Interface/Expr_Command.h"
-#include "../../Array/Array.h"
 #include "../../Iterator/iterArray/Array_Iterator.h"
 
 class Remove_Queen_Command : public Expr_Command {
