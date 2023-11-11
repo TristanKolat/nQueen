@@ -16,7 +16,7 @@
 
 class Place_Queen_Command : public Expr_Command {
 public:
-    // Construct an reference to the Board(Array) and row number
+    // Construct a reference to the Board(Array) and row number
     Place_Queen_Command(Array_Iterator<int> &iter, int row);
     virtual ~Place_Queen_Command() { }
     //execute placing the queen onto the board array
