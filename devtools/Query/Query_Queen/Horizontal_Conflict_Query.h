@@ -4,7 +4,7 @@
  * 
  * @date   Nov 11th, 2023
  * 
- * @brief Command to check for horizontal conflicts on a chessboard for the N-Queens problem.
+ * @brief Query to check for horizontal conflicts on a chessboard for the N-Queens problem.
  */
 
 #ifndef _HORIZONTAL_CONFLICT_QUERY_H_
