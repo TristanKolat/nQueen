@@ -2,7 +2,7 @@
 
 #include "Place_Queen_Command.h"
 
-Place_Queen_Command::Place_Queen_Command(Array_Iterator<size_t> &iter, size_t row)
+Place_Queen_Command::Place_Queen_Command(Array_Iterator<int> &iter, int row)
     : iter_(iter), 
       row_(row) 
 {}
