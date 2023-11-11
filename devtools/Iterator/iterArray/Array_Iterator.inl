@@ -34,6 +34,12 @@ void Array_Iterator<T>::advance(void) {
 
 template <typename T>
 inline
+size_t Array_Iterator<T>::Index(void) {
+    return this->curr_;
+}
+
+template <typename T>
+inline
 T& Array_Iterator<T>::operator * (void) {
     return this->a_[this->curr_];
 }

@@ -28,6 +28,11 @@ class Array_Iterator : public Expr_Iterator<T> {
         virtual void advance(void);
 
         /**
+         * Returns the current index
+         */
+        size_t Array_Iterator<T>::Index(void);
+
+        /**
          * @return A reference to the element at the current iterator position.
          */
         virtual T& operator * (void);
