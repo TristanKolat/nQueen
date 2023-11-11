@@ -21,7 +21,7 @@ public:
     Place_Queen_Command(Array_Iterator<int> &iter, int row);
     virtual ~Place_Queen_Command() { }
     //execute placing the queen onto the board array
-    virtual bool execute(void);
+    virtual void execute(void);
 
 private:
     //referenced column from the iterator in the chess board array for assigning a row number 
