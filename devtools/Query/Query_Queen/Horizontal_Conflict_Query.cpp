@@ -1,11 +1,11 @@
-#include "Horizontal_Conflict_Command.h"
+#include "Horizontal_Conflict_Query.h"
 
-Horizontal_Conflict_Command::Horizontal_Conflict_Command(Array<int> &board, int row)
+Horizontal_Conflict_Query::Horizontal_Conflict_Query(Array<int> &board, int row)
     : board_(board),
       row_(row) 
 {}
 
-bool Horizontal_Conflict_Command::execute(void) {
+bool Horizontal_Conflict_Query::execute(void) {
     // Create an iterator to iterate from the beginning of the array (board)
     // Iterate over the entire array to check for a queen in the same row
     for (Array_Iterator<int> board_iter(board_); !board_iter.is_done(); board_iter.advance()) {

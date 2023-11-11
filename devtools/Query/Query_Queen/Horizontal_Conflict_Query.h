@@ -1,4 +1,4 @@
-// Horizontal_Conflict_Command.h
+// Horizontal_Conflict_Query.h
 /**
  * @author Tristan Kolat
  * 
@@ -7,20 +7,20 @@
  * @brief Command to check for horizontal conflicts on a chessboard for the N-Queens problem.
  */
 
-#ifndef _HORIZONTAL_CONFLICT_COMMAND_H_
-#define _HORIZONTAL_CONFLICT_COMMAND_H_
+#ifndef _HORIZONTAL_CONFLICT_QUERY_H_
+#define _HORIZONTAL_CONFLICT_QUERY_H_
 
-#include "../Interface/Expr_Command.h"
+#include "../Interface/Expr_Query.h"
 #include "../../Array/Array.h"
 #include "../../Iterator/iterArray/Array_Iterator.h"
 
-class Horizontal_Conflict_Command : public Expr_Command {
+class Horizontal_Conflict_Query : public Expr_Query {
 public:
     /** Construct a reference to the entire Board(Array) and row number
      * @param[in]   Array<int> &board   a reference to the chessboard
      * @param[in]   int row             row number being checked
      * */
-    Horizontal_Conflict_Command(Array<int> &board, int row);
+    Horizontal_Conflict_Query(Array<int> &board, int row);
     /**
      * execute checking horizontal conflict
      * 
@@ -33,4 +33,4 @@ private:
     int row_;
 };
 
-#endif // !_HORIZONTAL_CONFLICT_COMMAND_H_
+#endif // !_HORIZONTAL_CONFLICT_QUERY_H_
