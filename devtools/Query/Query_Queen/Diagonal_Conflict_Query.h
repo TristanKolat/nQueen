@@ -25,9 +25,9 @@ class Diagonal_Conflict_Query : public Expr_Query {
 public:
     /** Construct a reference to the entire Board(Array) and current iteration (gives row and col)
      * @param[in]   Array<int> &board               a reference to the chessboard
-     * @param[in]   Array_Iterator<int> &iter       col & row numbers being checked
+     * @param[in]   int row, col       col & row numbers being checked
      * */
-    Diagonal_Conflict_Query(Array<int> &board, Array_Iterator<int> &iter);
+    Diagonal_Conflict_Query(Array<int> &board, int col, int row);
     /**
      * execute checking horizontal conflict query
      * 
@@ -37,7 +37,8 @@ public:
 
 private:
     Array<int> &board_;
-    Array_Iterator<int> &iter_;
+    int col_;
+    int row_;
 };
 
 #endif // !_DIAGONAL_CONFLICT_QUERY_H_

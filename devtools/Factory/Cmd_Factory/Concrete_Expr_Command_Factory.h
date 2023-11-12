@@ -21,8 +21,8 @@
  */
 class Concrete_Expr_Command_Factory : public Expr_Command_Factory {
 public:
-    virtual Place_Queen_Command* create_place_queen_command(Array<int> &board, int row);
-    virtual Remove_Queen_Command* create_remove_queen_command(Array<int> &board, int row);
+    virtual Place_Queen_Command* create_place_queen_command(Array<int> &board, int col, int row);
+    virtual Remove_Queen_Command* create_remove_queen_command(Array<int> &board, int col);
 };
 
 #endif // _CONCRETE_EXPR_COMMAND_FACTORY_H_

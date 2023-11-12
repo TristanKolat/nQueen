@@ -21,8 +21,8 @@
  */
 class Concrete_Expr_Query_Factory : public Expr_Query_Factory {
 public:
-    Horizontal_Conflict_Query* create_horizontal_conflict_query(const Array<int> &board, int row) override;
-    Diagonal_Conflict_Query* create_diagonal_conflict_query(const Array<int> &board, size_t column, int row) override;
+    Horizontal_Conflict_Query* create_horizontal_conflict_query(Array<int> &board, int row);
+    Diagonal_Conflict_Query* create_diagonal_conflict_query(Array<int> &board, size_t column, int row);
 };
 
 #endif // _CONCRETE_EXPR_QUERY_FACTORY_H_

@@ -17,9 +17,8 @@
  * @param[in]   row     The row on the board where the queen is to be placed.
  * @return      A pointer to the newly created Place_Queen_Command object.
  */
-Place_Queen_Command* Concrete_Expr_Command_Factory::create_place_queen_command(Array<int> &board, int row) {
-    Array_Iterator<int> iter(board);
-    return new Place_Queen_Command(iter, row);
+Place_Queen_Command* Concrete_Expr_Command_Factory::create_place_queen_command(Array<int> &board, int col, int row) {
+    return new Place_Queen_Command(board, col, row);
 }
 
 /**
@@ -30,7 +29,6 @@ Place_Queen_Command* Concrete_Expr_Command_Factory::create_place_queen_command(A
  * @param[in]   row     The row on the board from which the queen is to be removed.
  * @return      A pointer to the newly created Remove_Queen_Command object.
  */
-Remove_Queen_Command* Concrete_Expr_Command_Factory::create_remove_queen_command(Array<int> &board, int row) {
-    Array_Iterator<int> iter(board);
-    return new Remove_Queen_Command(iter);
+Remove_Queen_Command* Concrete_Expr_Command_Factory::create_remove_queen_command(Array<int> &board, int col) {
+    return new Remove_Queen_Command(board, col);
 }

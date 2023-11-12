@@ -18,14 +18,15 @@
 class Place_Queen_Command : public Expr_Command {
 public:
     // Construct a reference to the Board(Array) and row number
-    Place_Queen_Command(Array_Iterator<int> &iter, int row);
+    Place_Queen_Command(Array<int> &board, int col, int row);
     virtual ~Place_Queen_Command() { }
     //execute placing the queen onto the board array
     virtual void execute(void);
 
 private:
-    //referenced column from the iterator in the chess board array for assigning a row number 
-    Array_Iterator<int> &iter_;
+    //reference to the chessboard
+    Array<int> board_;
+    int col_;
     //row number to place queen
     int row_;
 };
