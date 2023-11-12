@@ -9,7 +9,7 @@
 #ifndef _CONCRETE_FACTORY_H_
 #define _CONCRETE_FACTORY_H_
 
-#include "../Interface/Abstract_Factory.h"
+#include "Interface/Abstract_Factory.h"
 #include "Concrete_Command_Factory.h"
 #include "Concrete_Query_Factory.h"
 
