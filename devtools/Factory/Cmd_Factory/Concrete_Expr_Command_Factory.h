@@ -11,7 +11,6 @@
 #define _CONCRETE_EXPR_COMMAND_FACTORY_H_
 
 #include "Interface/Expr_Command_Factory.h"
-#include "../../Iterator/iterArray/Array_Iterator.h"
 
 /**
  * @class Concrete_Expr_Command_Factory

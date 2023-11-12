@@ -27,7 +27,7 @@ public:
      * @param[in]   row     Row where the queen is to be placed.
      * @return      Pointer to the created Place_Queen_Command object.
      */
-    virtual Place_Queen_Command* create_place_queen_command(Array<int> &board, int row) = 0;
+    virtual Place_Queen_Command* create_place_queen_command(Array<int> &board, int col, int row) = 0;
 
     /**
      * Creates a Remove_Queen_Command object.
@@ -35,7 +35,7 @@ public:
      * @param[in]   row     Row from which the queen is to be removed.
      * @return      Pointer to the created Remove_Queen_Command object.
      */
-    virtual Remove_Queen_Command* create_remove_queen_command(Array<int> &board, int row) = 0;
+    virtual Remove_Queen_Command* create_remove_queen_command(Array<int> &board, int col) = 0;
 };
 
 #endif // _EXPR_COMMAND_FACTORY_H_
