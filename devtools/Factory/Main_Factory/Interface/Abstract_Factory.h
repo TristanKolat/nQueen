@@ -9,8 +9,8 @@
 #ifndef _ABSTRACT_FACTORY_H_
 #define _ABSTRACT_FACTORY_H_
 
-#include "Command_Factory.h"
-#include "Query_Factory.h"
+#include "../../Query_Factory/Interface/Expr_Query_Factory.h"
+#include "Expr_Query_Factory.h"
 
 /**
  * @class Abstract_Factory
