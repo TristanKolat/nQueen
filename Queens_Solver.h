@@ -13,6 +13,8 @@
  * @class Queens_Solver
  * @brief Solves the N-Queens problem and stores all possible solutions.
  * 
+ * @author Tristan Kolat
+ * 
  * This class implements the algorithm to find all valid solutions to the N-Queens problem,
  * where no two queens threaten each other. It uses a stack to store each unique solution as an
  * Array of integers, where each integer represents the queen's row position in the corresponding column.
