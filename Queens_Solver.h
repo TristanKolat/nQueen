@@ -25,7 +25,7 @@ class Queens_Solver {
          * @brief Constructor for Queens_Solver that initializes the solver with a specific board size.
          * @param solutions Reference to a stack for storing the solutions found.
          */
-        Queens_Solver(Stack<Array<int>>& solutions);
+        Queens_Solver(Stack<Array<int>>& solutions, int numQueens);
 
         /**
          * @brief Solves the N-Queens problem.
@@ -68,8 +68,9 @@ class Queens_Solver {
          */
         bool is_Safe(Array<int>& board, int col, int row);
 
-        Stack<Array<int>>& solutions; // Reference to a stack to store all valid board configurations.
+        Stack<Array<int>>& solutions_; // Reference to a stack to store all valid board configurations.
         Concrete_Factory factory; // Factory to create command and query objects.
+        int numQueens_;
 };
 
 #endif // QUEENS_SOLVER_H
