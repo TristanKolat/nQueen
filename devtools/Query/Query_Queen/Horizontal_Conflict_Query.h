@@ -11,7 +11,6 @@
 #define _HORIZONTAL_CONFLICT_QUERY_H_
 
 #include "../Interface/Expr_Query.h"
-#include "../../Array/Array.h"
 #include "../../Iterator/iterArray/Array_Iterator.h"
 
 class Horizontal_Conflict_Query : public Expr_Query {

@@ -11,7 +11,6 @@
 #define _DIAGONAL_CONFLICT_QUERY_H_
 
 #include "../Interface/Expr_Query.h"
-#include "../../Array/Array.h"
 #include "../../Iterator/iterArray/Array_Iterator.h"
 
 /**
@@ -33,7 +32,7 @@ public:
      * 
      * @return      true if conflict, false otherwise
     */
-    virtual bool execute() override;
+    virtual bool execute();
 
 private:
     Array<int> &board_;

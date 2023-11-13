@@ -11,6 +11,9 @@
 
 #include "Interface/Abstract_Factory.h"
 
+#include "../../Cmd_Factory/Concrete_Expr_Command_Factory.h"
+#include "../../Query_Factory/Concrete_Expr_Query_Factory.h"
+
 /**
  * @brief Concrete implementation of the Abstract_Factory interface.
  *

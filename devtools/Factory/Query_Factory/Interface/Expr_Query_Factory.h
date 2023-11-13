@@ -23,7 +23,7 @@
  */
 class Expr_Query_Factory {
 public:
-    virtual ~Expr_Query_Factory() {}
+    //virtual ~Expr_Query_Factory() {}
 
     /**
      * Creates a Horizontal_Conflict_Query object.
@@ -31,7 +31,7 @@ public:
      * @param[in]   row     Row to check for horizontal conflicts.
      * @return      Pointer to the created Horizontal_Conflict_Query object.
      */
-    virtual Horizontal_Conflict_Query* create_horizontal_conflict_query(const Array<int> &board, int row) = 0;
+    virtual Horizontal_Conflict_Query* create_horizontal_conflict_query(Array<int> &board, int row) = 0;
 
     /**
      * Creates a Diagonal_Conflict_Query object.
@@ -40,7 +40,7 @@ public:
      * @param[in]   row     Row to check for diagonal conflicts.
      * @return      Pointer to the created Diagonal_Conflict_Query object.
      */
-    virtual Diagonal_Conflict_Query* create_diagonal_conflict_query(const Array<int> &board, size_t column, int row) = 0;
+    virtual Diagonal_Conflict_Query* create_diagonal_conflict_query(Array<int> &board, size_t column, int row) = 0;
 };
 
 #endif // _EXPR_QUERY_FACTORY_H_
