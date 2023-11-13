@@ -40,9 +40,34 @@ class Queens_Solver {
         Stack<Array<int>>& get_solutions() const;
         
     private:
-        Stack<Array<int>>& solutions; ///< Reference to a stack to store all valid board configurations.
-        Concrete_Factory factory; ///< Factory to create command and query objects.
+        /**
+         * @brief Recursively attempts to place queens on the board.
+         * 
+         * This method is used internally by the solve method to try placing a queen on every row
+         * of the given column and recursively calling itself for the next column until all queens are placed
+         * on the board without any conflicts.
+         * 
+         * @param col The current column to place the queen in.
+         * @param board The current state of the board represented by an array.
+         */
+        void solve_placements(int col, Array<int>& board);
+
+        /**
+         * @brief Checks if a queen is not under attack at a given position.
+         * 
+         * Determines if a queen can be placed at the specified row and column without being
+         * attacked based on the current state of the board. It checks for horizontal and diagonal
+         * conflicts with any existing queens.
+         * 
+         * @param row The row position to check.
+         * @param col The column position to check.
+         * @param board The current state of the board.
+         * @return true if the queen is not under attack, false otherwise.
+         */
+        bool is_Safe(Array<int>& board, int col, int row);
+
+        Stack<Array<int>>& solutions; // Reference to a stack to store all valid board configurations.
+        Concrete_Factory factory; // Factory to create command and query objects.
 };
 
 #endif // QUEENS_SOLVER_H
-
