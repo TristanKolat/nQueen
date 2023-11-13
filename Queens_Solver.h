@@ -52,7 +52,7 @@ class Queens_Solver {
          * @param col The current column to place the queen in.
          * @param board The current state of the board represented by an array.
          */
-        void solve_placements(int col, Array<int>& board);
+        void solve_placements(Array<int>& board, int col);
 
         /**
          * @brief Checks if a queen is not under attack at a given position.
