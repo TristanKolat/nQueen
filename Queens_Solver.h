@@ -61,8 +61,37 @@ class Queens_Solver {
          */
         bool is_Safe(Array<int>& board, int col, int row);
 
+        /**
+         * @brief Places a queen on the chessboard at the specified location.
+         *
+         * This method initializes the command factory to create a place queen command object,
+         * which encapsulates the action of placing a queen on the board. The command is then
+         * executed to place the queen at the given row and column on the board.
+         *
+         * @param board A reference to the board array where the queen is to be placed.
+         * @param col The column index on the board where the queen is to be placed.
+         * @param row The row index on the board where the queen is to be placed.
+        */
+        void place_queen(Array<int>& board, int col, int row);
+
+        /**
+         * @brief Removes a queen from the chessboard at the specified column.
+         *
+         * This method utilizes the command factory to create a remove queen command object,
+         * which encapsulates the action of removing a queen from the board. The command is
+         * then executed to remove the queen from the given column, effectively setting the
+         * column's value back to -1 to indicate that no queen is placed in that column.
+         * This method is typically called during the backtracking process of the N-Queens solution.
+         *
+         * @param board A reference to the board array from which the queen is to be removed.
+         * @param col The column index on the board where the queen is to be removed.
+        */
+        void remove_queen(Array<int>& board, int col);
+
         Stack<Array<int>>& solutions_; // Reference to a stack to store all valid board configurations.
         Concrete_Factory factory; // Factory to create command and query objects.
+        Expr_Command_Factory* command_factory;
+        Expr_Query_Factory* query_factory;
         int numQueens_;
 };
 
