@@ -16,7 +16,28 @@ void Queens_Solver::solve() {
 }
 
 void Queens_Solver::solve_placements(Array<int>& board, int col) {
+    //check if all queens have been placed
+    //if column equals the size of board then all queens have been placed
+    if (col == board.size()) {
+        solutions_.push(board);
+        return;
+    }
 
+    for (int row = 0; row < board.size(); row++) {
+        //if queen is safe in current row then place the queen
+        if (is_Safe(board, col, row)) {
+            auto command_factory = factory.create_command_factory();
+            auto place_queen_command = command_factory -> create_place_queen_command(board, col, row);
+            place_queen_command -> execute();
+
+            //once queen is placed then recursively recall the function to start the next rows evaluation
+            solve_placements(board, col++);
+
+            //remove the queens after recursion for finding every possible solution
+            auto remove_queen_command = command_factory -> create_remove_queen_command(board, col);
+            remove_queen_command -> execute();
+        }
+    }
 }
 
 bool Queens_Solver::is_Safe(Array<int>& board, int col ,int row) {
