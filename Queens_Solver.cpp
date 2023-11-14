@@ -41,6 +41,10 @@ void Queens_Solver::solve_placements(Array<int>& board, int col) {
 }
 
 bool Queens_Solver::is_Safe(Array<int>& board, int col ,int row) {
+    //make horizontal and diagonal conflict query's
+    auto query_factory = factory.create_query_factory();
+    auto horizontal_conflict_query = query_factory -> create_horizontal_conflict_query(board, row);
+    auto diagonal_conflict_query = query_factory -> create_diagonal_conflict_query(board, col, row);
 
 }
 
