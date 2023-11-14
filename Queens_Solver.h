@@ -34,13 +34,6 @@ class Queens_Solver {
          * configurations in the solutions stack.
          */
         void solve();
-
-        /**
-         * @brief Getter for the stack of solutions.
-         * @return Reference to the stack of solutions.
-         */
-        Stack<Array<int>>& get_solutions() const;
-        
     private:
         /**
          * @brief Recursively attempts to place queens on the board.
