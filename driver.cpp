@@ -7,11 +7,22 @@
 
 int main(int argc, char *argv[]) {
     //initalize solution stack
-    //initialize other variables to be used
+    Stack<Array<int>> solutions;
+    //initialize int for holding users inputted number of queense
+    int nQueens;
+    //variable for converting user input from string -> int
+    std::string input;
 
     //start loop for user interaction
+    while (true) {
         //ask user for number of queens and store input
+        std::cout << "How many Queens?\n------------------\n\n--Type QUIT to exit--";
+        std::cin >> input;
+
         //if user inputs QUIT then break loop
+        if (input == "QUIT") {
+            break;
+        }
 
         //pass user integer value and solutions stack into queens solver
         //start recursion with solve()
@@ -33,6 +44,8 @@ int main(int argc, char *argv[]) {
         //end do while loop
 
         //clear solutions stack in case user wants to try another solution
+
+    }
 
     return 0;
 }
