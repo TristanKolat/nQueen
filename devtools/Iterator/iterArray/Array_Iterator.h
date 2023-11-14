@@ -30,7 +30,7 @@ class Array_Iterator : public Expr_Iterator<T> {
         /**
          * Returns the current index
          */
-        size_t Array_Iterator<T>::Index(void);
+        size_t Index(void);
 
         /**
          * @return A reference to the element at the current iterator position.

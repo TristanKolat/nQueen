@@ -81,7 +81,6 @@ class Queens_Solver {
          * which encapsulates the action of removing a queen from the board. The command is
          * then executed to remove the queen from the given column, effectively setting the
          * column's value back to -1 to indicate that no queen is placed in that column.
-         * This method is typically called during the backtracking process of the N-Queens solution.
          *
          * @param board A reference to the board array from which the queen is to be removed.
          * @param col The column index on the board where the queen is to be removed.
