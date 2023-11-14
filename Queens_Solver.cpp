@@ -25,10 +25,18 @@ void Queens_Solver::solve_placements(Array<int>& board, int col) {
 
     for (int row = 0; row < board.size(); row++) {
         //if queen is safe in current row then place the queen
-            if (is_Safe(board, col, row)) {
-            }
-        //once queen is placed then recursively recall the function to start the next rows evaluation
-        //remove the queens after recursion for finding every possible solution
+        if (is_Safe(board, col, row)) {
+            auto command_factory = factory.create_command_factory();
+            auto place_queen_command = command_factory -> create_place_queen_command(board, col, row);
+            place_queen_command -> execute();
+
+            //once queen is placed then recursively recall the function to start the next rows evaluation
+            solve_placements(board, col++);
+
+            //remove the queens after recursion for finding every possible solution
+            auto remove_queen_command = command_factory -> create_remove_queen_command(board, col);
+            remove_queen_command -> execute();
+        }
     }
 }
 
