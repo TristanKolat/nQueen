@@ -15,7 +15,7 @@
 #ifndef _EXPR_QUERY_H_
 #define _EXPR_QUERY_H_
 
-#include "../../../Array/Array.h"
+#include "../../Array/Array.h"
 
 class Expr_Query {
 public:
