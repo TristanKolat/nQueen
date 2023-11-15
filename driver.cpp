@@ -14,7 +14,7 @@ int main(int argc, char *argv[]) {
     //start loop for user interaction
     while (true) {
         //ask user for number of queens and store input
-        std::cout << "How many Queens?\n------------------\n\n--Type QUIT to exit--\n\n";
+        std::cout << "------------------\nHow many Queens?\n------------------\n\n--Type QUIT to exit--\n\n";
         std::cin >> input;
 
         //if user inputs QUIT then break loop
@@ -28,9 +28,10 @@ int main(int argc, char *argv[]) {
         algorithm.solve();
 
         //display to user how many solutions were found
+        std::cout << solutions.size() << " solutions found for this size\n";
 
         //make do while loop
-        //in do while as user what solution they want to see. 
+        //in do while ask user what solution they want to see. 
         //keep looping so that user can view different solutions
 
         //add another check in case user wants to quit
