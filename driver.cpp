@@ -8,9 +8,7 @@
 int main(int argc, char *argv[]) {
     //initalize solution stack
     Stack<Array<int>> solutions;
-    //initialize int for holding users inputted number of queense
-    int nQueens;
-    //variable for converting user input from string -> int
+    //variable for converting user input from string -> int to pass user defined num Queens
     std::string input;
 
     //start loop for user interaction
@@ -26,6 +24,8 @@ int main(int argc, char *argv[]) {
 
         //pass user integer value and solutions stack into queens solver
         //start recursion with solve()
+        Queens_Solver algorithm(solutions, std::stoi(input));
+        algorithm.solve();
 
         //display to user how many solutions were found
 
