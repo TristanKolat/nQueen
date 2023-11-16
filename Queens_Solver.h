@@ -34,6 +34,13 @@ class Queens_Solver {
          * configurations in the solutions stack.
          */
         void solve();
+
+        /**
+         * @brief Function to set the maximum number of solutions the solver should find.         * 
+         * @param max_size variable for inputting new max size
+        */ 
+        static void set_max_solutions_size(size_t max_size);
+        
     private:
         /**
          * @brief Recursively attempts to place queens on the board.
@@ -92,6 +99,9 @@ class Queens_Solver {
         Expr_Command_Factory* command_factory;
         Expr_Query_Factory* query_factory;
         int numQueens_;
+
+        //variable to declare a max amount of solutions to find
+        int max_solutions_;
 };
 
 #endif // QUEENS_SOLVER_H
