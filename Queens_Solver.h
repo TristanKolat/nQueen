@@ -6,7 +6,7 @@
 #include "devtools/Factory/Main_Factory/Concrete_Factory.h"
 #include "devtools/Factory/Cmd_Factory/Concrete_Expr_Command_Factory.h"
 #include "devtools/Factory/Query_Factory/Concrete_Expr_Query_Factory.h"
-#include "devtools/Stack/Stack.h"
+#include "devtools/Stack/Stack.cpp"
 #include "devtools/Array/Array.h"
 
 /**

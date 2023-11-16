@@ -5,7 +5,7 @@
 // I pledge that I have neither given nor receieved any help
 // on this assignment.
 
-#include "Array.h"
+//#include "Array.h"
 #include <stdexcept>         // for std::out_of_bounds exception
 
 //for defaulting array to 7 when default constructor is called

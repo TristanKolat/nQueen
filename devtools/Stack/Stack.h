@@ -128,6 +128,6 @@ private:
 #include "Stack.inl"
 
 // include the source file since template class
-#include "Stack.cpp"
+//#include "Stack.cpp"
 
 #endif  // !defined _CS507_STACK_H_
