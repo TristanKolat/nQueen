@@ -25,7 +25,7 @@ class Queens_Solver {
          * @brief Constructor for Queens_Solver that initializes the solver with a specific board size.
          * @param solutions Reference to a stack for storing the solutions found.
          */
-        Queens_Solver(Stack<Array<int>>& solutions, int numQueens);
+        Queens_Solver(Stack<Array<int>>& solutions, int numQueens, int MAX);
 
         /**
          * @brief Solves the N-Queens problem.
@@ -35,12 +35,19 @@ class Queens_Solver {
          */
         void solve();
 
+
         /**
          * @brief Function to set the maximum number of solutions the solver should find.         * 
          * @param max_size variable for inputting new max size
         */ 
-        static void set_max_solutions_size(size_t max_size);
-        
+        void set_max_solutions_size(int max_size);
+
+        /**
+         * @brief Function returns the current max size
+        */ 
+        int get_max_solutions_size(void);
+
+
     private:
         /**
          * @brief Recursively attempts to place queens on the board.
@@ -52,7 +59,7 @@ class Queens_Solver {
          * @param col The current column to place the queen in.
          * @param board The current state of the board represented by an array.
          */
-        void solve_placements(Array<int>& board, int col);
+        bool solve_placements(Array<int>& board, int col);
 
         /**
          * @brief Checks if a queen is not under attack at a given position.
