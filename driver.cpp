@@ -6,46 +6,71 @@
 #include <string>
 
 int main(int argc, char *argv[]) {
-    //initalize solution stack
+    // Initialize the solutions stack
     Stack<Array<int>> solutions;
-    //variable for converting user input from string -> int to pass user defined num Queens
+    // Variable to hold user input for the number of queens
     std::string input;
+    // Define the maximum number of solutions allowed
+    int MAX = 14500;
 
-    //start loop for user interaction
+    // Start the loop for user interaction
     while (true) {
-        //ask user for number of queens and store input
-        std::cout << "------------------\nHow many Queens?\n------------------\n\n--Type QUIT to exit--\n\n";
+        // Ask user for the number of queens and store input
+        std::cout << "------------------\nHow many Queens?\n------------------\n-Type QUIT to exit-\n\n";
         std::cin >> input;
 
-        //if user inputs QUIT then break loop
+        // If user inputs QUIT, then break the loop
         if (input == "QUIT") {
             break;
         }
 
-        //pass user integer value and solutions stack into queens solver
-        //start recursion with solve()
-        Queens_Solver algorithm(solutions, std::stoi(input));
+        // Clear previous solutions from the stack
+        solutions.clear();
+
+        // Pass user integer value and solutions stack into queens solver
+        // Start recursion with solve()
+        Queens_Solver algorithm(solutions, std::stoi(input), MAX);
         algorithm.solve();
 
-        //display to user how many solutions were found
+        // Display to the user how many solutions were found
         std::cout << solutions.size() << " solutions found for this size\n";
+        if (solutions.size() >= MAX) {
+            std::cout << "------------------\n    WARNING\n------------------\n";
+            std::cout << "Max solution size has been reached (>= " << MAX << " solutions found)\n";
+            std::cout << "This may not correctly demonstrate the amount of solutions.\n";
+            std::cout << "(Change MAX variable in driver to change size)\n";
+            std::cout << "--------------------------------------\n\n";
+        }
 
-        //make do while loop
-        //in do while ask user what solution they want to see. 
-        //keep looping so that user can view different solutions
+        // Make a do-while loop to show solutions to the user
+        std::string nextInput;
+        do {
+            // Check that the stack is not empty
+            if (solutions.is_empty()) {
+                std::cout << "No more solutions to display.\n";
+                break;
+            }
 
-        //add another check in case user wants to quit
+            // Show the board at the top of the stack
+            Array<int> solution = solutions.top();
+            for (Array_Iterator<int> iter(solution); !iter.is_done(); iter.advance()) {
+                std::cout << *iter << " ";
+            }
+            std::cout << std::endl;
 
-        //add another check to see if user wants to see all solutions in one display
+            // Ask user if they would like to see the next solution or choose another size
+            std::cout << "Would you like to see the next solution? (YES to continue, NO to choose another size): ";
+            std::cin >> nextInput;
 
-        //else retrieve the specific solution 
-            //store into temp array
-            //display that solution held in the temp array
+            // If yes, pop stack then let loop rerun to show next board
+            if (nextInput == "YES" || nextInput == "yes") {
+                solutions.pop();
+            }
 
-        //end do while loop
+        // Break the do-while loop if the user wants to go back
+        } while (nextInput == "YES" || nextInput == "yes");
 
-        //clear solutions stack in case user wants to try another solution
-
+        // End do-while loop
     }
 
     return 0;
