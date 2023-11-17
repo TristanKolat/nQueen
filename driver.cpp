@@ -53,8 +53,22 @@ int main(int argc, char *argv[]) {
 
             // Show the board at the top of the stack
             Array<int> solution = solutions.top();
+            std::cout << solution.size();
+
+            // Iterate over each row (which is represented by each item in the solution array)
             for (Array_Iterator<int> iter(solution); !iter.is_done(); iter.advance()) {
-                std::cout << *iter << " ";
+                // Get the column index where the queen is placed for this row
+                int queenColumn = *iter;
+
+                // Print the board for the current row
+                for (int col = 0; col < solution.size(); col++) {
+                    if (col == queenColumn) {
+                        std::cout << 'Q' << " "; // Queen is placed in this column
+                    } else {
+                        std::cout << '-' << " "; // Empty square
+                    }
+                }
+                std::cout << std::endl; // Newline at the end of the row
             }
             std::cout << std::endl;
 

@@ -54,21 +54,29 @@ Array <T>::~Array (void)
 // operator =
 //
 template <typename T>
-const Array <T> & Array <T>::operator = (const Array <T> & rhs)
-{
-    //check for no self assignment
-    if (this != &rhs) {        
-       this -> resize(rhs.max_size());
-       this -> cur_size_ = rhs.size();
+const Array <T> & Array <T>::operator = (const Array <T> & rhs) {
+    // Check for self-assignment
+    if (this != &rhs) {
+        // Resize the array only if necessary
+        if (this->max_size() < rhs.size()) {
+            this->resize(rhs.size());
+        }
+        // Set the current size to the size of the right-hand side object
+        this->cur_size_ = rhs.size();
 
         // Copy elements from rhs to this
-        for (size_t iter = 0; iter < rhs.size(); iter++) {
-            this -> set (iter, rhs.get(iter));
+        for (size_t iter = 0; iter < this->cur_size_; iter++) {
+            this->data_[iter] = rhs.data_[iter];
         }
-     
-    }    
-    return *this;    
+
+        // If the current max size is greater than rhs, set the extra elements to default
+        for (size_t iter = this->cur_size_; iter < this->max_size_; iter++) {
+            this->data_[iter] = T();
+        }
+    }
+    return *this;
 }
+
 
 //
 // resize

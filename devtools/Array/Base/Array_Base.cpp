@@ -63,6 +63,7 @@ Array_Base <T>::Array_Base (const Array_Base <T> & arr)
     for (size_t iter = 0; iter < arr.size(); iter++) {
         this -> set(iter, arr.data_[iter]);
     }
+    this->cur_size_ = arr.size();
 }
 
 /* 
