@@ -1,7 +1,6 @@
 // Queens_Solver.cpp
 
 #include "Queens_Solver.h"
-#include <iostream>
 
 // Constructor that sets up the command and query factories needed for solving the N-Queens problem.
 Queens_Solver::Queens_Solver(Stack<Array<int>>& solutions, int numQueens, int MAX)
@@ -17,7 +16,6 @@ Queens_Solver::Queens_Solver(Stack<Array<int>>& solutions, int numQueens, int MA
 void Queens_Solver::solve() {
     // Initialize the board with -1 representing no queen placed
     Array<int> board(numQueens_, -1);
-    std::cout << "\nQueen_Solver cur_size: " << board.size();
     // Start the recursive proccess that solves all solutions for placed queens
     solve_placements(board, 0);
 }
